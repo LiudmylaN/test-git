@@ -23,7 +23,6 @@ def write_to_file(keywords, days, data, fw):
             new_row.append(data[kw][day])
         fw.writerow(new_row)
 
-
 filearray = glob.glob("Keyword*.csv")
 
 for filename in filearray:
