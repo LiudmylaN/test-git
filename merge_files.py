@@ -16,6 +16,7 @@ keywords_avg_cpc = {}
 keywords_cost = {}
 keywords_avg_pos = {}
 
+# write to file
 def write_to_file(keywords, days, data, fw):
     for kw in keywords:
         new_row = [kw]
@@ -23,9 +24,10 @@ def write_to_file(keywords, days, data, fw):
             new_row.append(data[kw][day])
         fw.writerow(new_row)
 
-
+# take a list of all files
 filearray = glob.glob("Keyword*.csv")
 
+# loop through all files and gather data
 for filename in filearray:
     f=codecs.open(filename,"rb","utf-16")
     csvread=csv.reader(f,delimiter='\t')
